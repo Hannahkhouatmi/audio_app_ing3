@@ -51,6 +51,8 @@ dependencies:
   app_settings: ^5.1.1
   web: ^1.1.1
   web_authn_web: ^0.0.5
+  just_audio_background: ^0.0.1-beta.17
+  fl_chart: ^0.66.0
 
 dev_dependencies:
   flutter_test:
