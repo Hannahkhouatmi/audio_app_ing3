@@ -12,10 +12,8 @@ import '../models/track_model.dart';
 import 'listening_stats_service.dart';
 
 /// Service centralisant la logique du lecteur audio.
-///
-/// - Lecture en arrière-plan via [just_audio_background] (mobile/desktop)
-/// - File d'attente gérée avec [ConcatenatingAudioSource]
-/// - Journalisation automatique des sessions d'écoute >= 5s vers Firestore
+/// Lecture en arrière-plan via [just_audio_background] (mobile/desktop)
+/// File d'attente gérée avec [ConcatenatingAudioSource]
 class AudioPlayerService {
   final AudioPlayer _player = AudioPlayer();
   final ListeningStatsService _statsService;

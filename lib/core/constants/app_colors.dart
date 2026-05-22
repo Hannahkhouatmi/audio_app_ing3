@@ -4,16 +4,15 @@
 
 import 'package:flutter/material.dart';
 
-/// Constantes de couleurs pour le design system "Calm & Focused".
 class AppColors {
-  // Base — dark theme
+  // Base : dark theme
   static const Color background = Color(0xFF0A0A0F); // Presque noir
   static const Color surface = Color(0xFF13131A); // Cartes
   static const Color surfaceHigh = Color(0xFF1C1C26); // Éléments surélevés
   static const Color border = Color(0xFF2A2A38); // Bordures subtiles
   static const Color borderLight = Color(0xFF3A3A4E); // Bordures focus
 
-  // Accent — Une seule couleur principale
+  // Accent
   static const Color accent = Color(0xFF7C6EF6); // Violet doux
   static const Color accentLight = Color(0xFFAFA3FA); // Violet clair pour les textes
   static const Color accentFaded = Color(0x1A7C6EF6); // Violet très transparent pour backgrounds
@@ -28,7 +27,7 @@ class AppColors {
   static const Color textSecondary = Color(0xFF8888AA); // Gris moyen
   static const Color textDisabled = Color(0xFF4A4A64); // Gris foncé
 
-  // Gradients — Utilisés avec parcimonie
+  // Gradients
   static const List<Color> accentGradient = [
     Color(0xFF7C6EF6),
     Color(0xFF5B8DF6),
@@ -38,7 +37,7 @@ class AppColors {
   static Color withOpacity(Color color, double opacity) =>
       color.withValues(alpha: opacity);
 
-  // Ombres — très subtiles
+  // Ombres
   static const BoxShadow subtleShadow = BoxShadow(
     color: Color(0x40000000),
     blurRadius: 16,

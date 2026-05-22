@@ -1,11 +1,7 @@
-// ════════════════════════════════════════
-// lib/models/listening_session_model.dart
-// ════════════════════════════════════════
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-/// Représente une session d'écoute persistée dans Firestore.
-/// Stockée dans `users/{uid}/sessions/{auto-id}`.
+/// Représente une session d'écoute
 class ListeningSessionModel {
   final String id;
   final String trackId;

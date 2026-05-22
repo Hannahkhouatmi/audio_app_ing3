@@ -1,7 +1,3 @@
-// ════════════════════════════════════════
-// lib/ui/splash/splash_screen.dart
-// ════════════════════════════════════════
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -12,7 +8,7 @@ import '../../core/constants/app_colors.dart';
 import '../../core/constants/app_spacing.dart';
 import '../../core/constants/app_routes.dart';
 import '../../core/widgets/loading_dots.dart';
-/// Écran de démarrage (affiché pendant le chargement initial).
+/// Écran de démarrage (affiché pendant le chargement initial)
 class SplashScreen extends ConsumerStatefulWidget {
   const SplashScreen({super.key});
 
@@ -65,7 +61,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
             ),
             const SizedBox(height: AppSpacing.md),
             Text(
-              'Audio App Secure',
+              'Quran App',
               style: GoogleFonts.inter(
                 fontSize: 22,
                 fontWeight: FontWeight.w700,

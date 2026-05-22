@@ -5,7 +5,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 
-/// Un widget de secousse horizontal pour signaler visuellement une erreur.
+/// Widget de secousse horizontal pour erreur
 class ShakeWidget extends StatefulWidget {
   final Widget child;
   final double shakeRange;
@@ -40,14 +40,13 @@ class ShakeWidgetState extends State<ShakeWidget> with SingleTickerProviderState
     super.dispose();
   }
 
-  /// Déclenche l'animation de secousse (3 oscillations).
+  /// Déclenche l'animation de secousse
   void shake() {
     _controller.forward(from: 0.0);
   }
 
   double _getTranslation(double value) {
     // 3 oscillations complètes : sin(value * 3 * 2 * pi)
-    // On veut amortir à la fin
     if (value == 0.0 || value == 1.0) return 0.0;
     const double pi2 = 3.1415926535897932 * 2;
     return widget.shakeRange * (1.0 - value) * (3.0 * (1.0 - value)).clamp(0, 1) * (sin(value * 3.0 * pi2));

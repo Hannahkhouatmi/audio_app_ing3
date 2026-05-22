@@ -1,7 +1,3 @@
-// ════════════════════════════════════════
-// lib/services/secure_delete_service.dart
-// ════════════════════════════════════════
-
 import 'dart:io' show Platform;
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -15,8 +11,7 @@ enum SecureDeleteResult {
   error 
 }
 
-/// Service gérant la suppression sécurisée d'un favori avec validation biométrique
-/// et historique de sécurité dans Firestore.
+/// Service gérant la suppression sécurisée d'un favori avec validation biométrique et historique de sécurité dans Firestore
 class SecureDeleteService {
   final BiometricService _biometricService;
   final FavoritesServiceInterface _favoritesService;
@@ -24,7 +19,7 @@ class SecureDeleteService {
 
   SecureDeleteService(this._biometricService, this._favoritesService);
 
-  /// Supprime un favori après validation biométrique de l'utilisateur.
+  /// Supprime un favori après validation biométrique de l'utilisateur
   Future<SecureDeleteResult> deleteWithBiometric(String uid, String trackId) async {
     SecureDeleteResult result = SecureDeleteResult.error;
 
@@ -53,7 +48,7 @@ class SecureDeleteService {
     return result;
   }
 
-  /// Enregistre les détails de l'action de sécurité dans Firestore.
+  /// Enregistre les détails de l'action de sécurité dans Firestore
   Future<void> _logAction(String uid, String trackId, String actionResult) async {
     try {
       String deviceDesc = "Web Chrome";

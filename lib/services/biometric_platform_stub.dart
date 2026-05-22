@@ -1,7 +1,3 @@
-// ════════════════════════════════════════
-// lib/services/biometric_platform_stub.dart
-// ════════════════════════════════════════
-
 import 'biometric_result.dart';
 
 Future<bool> isBiometricAvailable() async => false;

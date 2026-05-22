@@ -1,13 +1,7 @@
-// ════════════════════════════════════════
-// lib/models/monthly_goal_model.dart
-// ════════════════════════════════════════
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-/// Objectif mensuel d'écoute.
-/// Stocké dans `users/{uid}/goals/{YYYY-MM}`.
 class MonthlyGoalModel {
-  /// Format "YYYY-MM" (ex: "2025-04")
   final String month;
   final int targetMinutes;
   final int achievedMinutes;
@@ -20,16 +14,16 @@ class MonthlyGoalModel {
     required this.updatedAt,
   });
 
-  /// Progression en pourcentage (0.0 → 1.0).
+  /// Progression en pourcentage
   double get progress {
     if (targetMinutes <= 0) return 0;
     return (achievedMinutes / targetMinutes).clamp(0.0, 1.0).toDouble();
   }
 
-  /// True si l'objectif est atteint ou dépassé.
+  /// True si l'objectif est atteint ou dépassé
   bool get isAchieved => achievedMinutes >= targetMinutes && targetMinutes > 0;
 
-  /// Clé de document pour un mois donné.
+  /// Clé de document pour un mois donné
   static String monthKey(DateTime date) {
     final y = date.year.toString().padLeft(4, '0');
     final m = date.month.toString().padLeft(2, '0');

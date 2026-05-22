@@ -1,8 +1,7 @@
 import 'package:dio/dio.dart';
 import '../models/track_model.dart';
 
-/// Service pour récupérer les récitations du Coran depuis l'API Quran.com (v4).
-/// C'est l'API la plus stable et utilisée par la plupart des applications modernes.
+/// Service pour récupérer les récitations du Coran depuis l'API Quran.com (v4)
 class QuranApiService {
   final Dio _dio;
 
@@ -17,7 +16,7 @@ class QuranApiService {
               ),
             );
 
-  /// Récupère la liste des récitateurs (recitations).
+  /// Récupère la liste des récitateurs
   Future<List<Map<String, dynamic>>> getReciters({String lang = 'fr'}) async {
     try {
       final response = await _dio.get('/resources/recitations', queryParameters: {
@@ -33,7 +32,7 @@ class QuranApiService {
     }
   }
 
-  /// Récupère la liste des sourates avec leurs noms.
+  /// Récupère la liste des sourates avec leurs noms
   Future<Map<int, String>> getChapterNames({String lang = 'fr'}) async {
     try {
       final response = await _dio.get('/chapters', queryParameters: {
@@ -52,7 +51,7 @@ class QuranApiService {
     }
   }
 
-  /// Récupère les fichiers audio pour un récitateur donné et construit la playlist.
+  /// Récupère les fichiers audio pour un récitateur donné et construit la playlist
   Future<List<TrackModel>> getSurahsForRecitation(int recitationId, String reciterName, Map<int, String> chapterNames) async {
     try {
       // Cette API retourne les 114 fichiers audio d'un coup pour ce récitateur

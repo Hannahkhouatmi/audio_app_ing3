@@ -8,7 +8,7 @@ import '../../core/constants/app_radius.dart';
 import '../../providers/audio_player_provider.dart';
 import '../player/widgets/mini_player.dart';
 
-/// Shell principal contenant la barre de navigation persistante.
+/// Shell principal contenant la barre de navigation persistante
 class MainShell extends ConsumerWidget {
   final StatefulNavigationShell navigationShell;
 

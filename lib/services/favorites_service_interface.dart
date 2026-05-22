@@ -1,7 +1,3 @@
-// ════════════════════════════════════════
-// lib/services/favorites_service_interface.dart
-// ════════════════════════════════════════
-
 import '../models/track_model.dart';
 
 /// Interface définissant le contrat pour la gestion des favoris de pistes audio.

@@ -1,6 +1,3 @@
-// ════════════════════════════════════════
-// lib/ui/biometric/biometric_screen.dart
-// ════════════════════════════════════════
 
 import 'dart:async';
 

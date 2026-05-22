@@ -1,7 +1,3 @@
-// ════════════════════════════════════════
-// lib/services/biometric_platform_io.dart
-// ════════════════════════════════════════
-
 import 'dart:io' show Platform;
 
 import 'package:app_settings/app_settings.dart';
@@ -16,7 +12,7 @@ final LocalAuthentication _auth = LocalAuthentication();
 bool get _isDesktop =>
     Platform.isWindows || Platform.isMacOS || Platform.isLinux;
 
-/// Vérifie si la biométrie est disponible (mobile + Windows + macOS).
+/// Vérifie si la biométrie est disponible
 Future<bool> isBiometricAvailable() async {
   try {
     return await _auth.isDeviceSupported();
@@ -38,7 +34,7 @@ Future<bool> hasBiometricsEnrolled() async {
   }
 }
 
-/// Authentification via empreinte (Android/iOS) ou Windows Hello / Touch ID.
+/// Authentification via empreinte
 Future<BiometricResult> authenticateBiometric() async {
   try {
     final canCheck = await _auth.canCheckBiometrics;

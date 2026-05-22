@@ -1,15 +1,11 @@
-// ════════════════════════════════════════
-// lib/models/user_model.dart
-// ════════════════════════════════════════
 
-/// Modèle représentant les données d'un utilisateur de l'application.
 class UserModel {
   final String uid;
   final String firstName;
   final String lastName;
   final DateTime birthDate;
   final String email;
-  final String? phone; // Champ téléphone optionnel (AV4)
+  final String? phone; //optionel
   final DateTime createdAt;
 
   UserModel({

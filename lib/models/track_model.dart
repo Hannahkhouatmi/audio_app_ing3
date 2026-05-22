@@ -1,8 +1,5 @@
-// ════════════════════════════════════════
-// lib/models/track_model.dart
-// ════════════════════════════════════════
 
-/// Modèle représentant une piste audio dans l'application.
+/// piste audio
 class TrackModel {
   final String id;
   final String title;
@@ -22,7 +19,7 @@ class TrackModel {
     this.durationSeconds = 0,
   });
 
-  /// Durée formatée mm:ss
+  /// mm:ss
   String get formattedDuration {
     if (durationSeconds <= 0) return '--:--';
     final m = durationSeconds ~/ 60;
@@ -54,8 +51,7 @@ class TrackModel {
     );
   }
 
-  /// Construit une piste depuis une réponse de l'API iTunes Search.
-  /// https://itunes.apple.com/search?term=...&entity=song
+  /// Construit une piste depuis une réponse de l'API iTunes Search
   factory TrackModel.fromItunes(Map<String, dynamic> json) {
     final id = (json['trackId'] ?? json['collectionId'] ?? 0).toString();
     final cover = (json['artworkUrl100'] as String?)?.replaceAll(

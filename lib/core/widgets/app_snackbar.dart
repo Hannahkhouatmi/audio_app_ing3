@@ -9,7 +9,6 @@ import '../constants/app_radius.dart';
 
 enum SnackBarType { success, error, info, warning }
 
-/// SnackBar personnalisé unifié et propre.
 class AppSnackBar {
   static void show(
     BuildContext context,

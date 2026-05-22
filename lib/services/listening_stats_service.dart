@@ -1,13 +1,9 @@
-// ════════════════════════════════════════
-// lib/services/listening_stats_service.dart
-// ════════════════════════════════════════
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '../models/listening_session_model.dart';
 
-/// Agrégat de minutes écoutées sur les 7 derniers jours.
+/// Agrégat de minutes écoutées sur les 7 derniers jours
 class WeeklyListeningStats {
-  /// 7 entrées du plus ancien au plus récent (index 0 = il y a 6 jours, 6 = aujourd'hui).
+  /// 7 entrées du plus ancien au plus récent (index 0 = il y a 6 jours, 6 = aujourd'hui)
   final List<DailyMinutes> days;
   final int totalMinutes;
 
@@ -39,11 +35,7 @@ class ArtistMinutes {
   const ArtistMinutes({required this.artist, required this.minutes});
 }
 
-/// Service gérant l'enregistrement et l'agrégation des statistiques d'écoute.
-///
-/// Arborescence Firestore :
-///   users/{uid}/sessions/{auto-id}
-///     - trackId, trackTitle, trackArtist, listenedSeconds, listenedAt
+/// Service gérant l'enregistrement et l'agrégation des statistiques d'écoute
 class ListeningStatsService {
   final FirebaseFirestore _firestore;
 

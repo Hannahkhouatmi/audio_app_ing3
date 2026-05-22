@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../constants/app_colors.dart';
 
-/// Champ de texte stylisé avec gestion d'état de validation.
 class AppTextField extends StatefulWidget {
   final String label;
   final String? hint;

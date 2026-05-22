@@ -7,5 +7,5 @@ class AppRoutes {
   static const stats = '/stats';
   static const quran = '/quran';
   static const favorites = '/favorites';
-  static const player = '/player'; // Uniquement pour le "Now Playing"
+  static const player = '/player';
 }

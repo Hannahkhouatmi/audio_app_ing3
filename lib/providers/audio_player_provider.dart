@@ -1,7 +1,3 @@
-// ════════════════════════════════════════
-// lib/providers/audio_player_provider.dart
-// ════════════════════════════════════════
-
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:just_audio/just_audio.dart';
 
@@ -9,7 +5,6 @@ import '../models/track_model.dart';
 import '../services/audio_player_service.dart';
 import 'auth_provider.dart';
 
-/// Instance singleton du service de lecture (un seul AudioPlayer pour toute l'app).
 final audioPlayerServiceProvider = Provider<AudioPlayerService>((ref) {
   final service = AudioPlayerService();
 
@@ -26,28 +21,28 @@ final audioPlayerServiceProvider = Provider<AudioPlayerService>((ref) {
   return service;
 });
 
-/// Piste actuellement jouée (suit currentIndexStream).
+/// Piste actuellement jouée (suit currentIndexStream)
 final currentTrackProvider = StreamProvider<TrackModel?>((ref) {
   final service = ref.watch(audioPlayerServiceProvider);
   return service.currentIndexStream.map((_) => service.currentTrack);
 });
 
-/// True si le lecteur est en cours de lecture.
+/// True si le lecteur est en cours de lecture
 final isPlayingProvider = StreamProvider<bool>((ref) {
   return ref.watch(audioPlayerServiceProvider).playingStream;
 });
 
-/// État brut du player (loading / buffering / ready / completed).
+/// État brut du player (loading / buffering / ready / completed)
 final playerStateProvider = StreamProvider<PlayerState>((ref) {
   return ref.watch(audioPlayerServiceProvider).playerStateStream;
 });
 
-/// Position courante.
+/// Position courante
 final playerPositionProvider = StreamProvider<Duration>((ref) {
   return ref.watch(audioPlayerServiceProvider).positionStream;
 });
 
-/// Durée totale de la piste.
+/// Durée totale de la piste
 final playerDurationProvider = StreamProvider<Duration?>((ref) {
   return ref.watch(audioPlayerServiceProvider).durationStream;
 });

@@ -5,7 +5,7 @@
 import 'package:flutter/material.dart';
 import '../constants/app_colors.dart';
 
-/// Un indicateur de chargement composé de 3 points qui pulsent en séquence.
+/// indicateur de chargement 3 points qui pulsent en séquence.
 class LoadingDots extends StatefulWidget {
   final Color color;
   final double dotSize;

@@ -1,18 +1,7 @@
-// ════════════════════════════════════════
-// lib/services/playlist_api_service.dart
-// ════════════════════════════════════════
-
 import 'package:dio/dio.dart';
 import '../models/track_model.dart';
 
-/// Service récupérant une playlist dynamique depuis l'API iTunes Search.
-///
-/// L'API iTunes est :
-///   - Gratuite, sans clé d'API
-///   - Compatible CORS (utilisable sur le web Flutter)
-///   - Fournit des extraits audio de 30 secondes (previewUrl)
-///
-/// Endpoint : https://itunes.apple.com/search?term=...&entity=song&limit=25
+/// recupere une playlist dynamique depuis l'API iTunes Search
 class PlaylistApiService {
   final Dio _dio;
 
@@ -28,8 +17,8 @@ class PlaylistApiService {
             ),
           );
 
-  /// Récupère une playlist par mot-clé de recherche.
-  /// Retourne uniquement les pistes ayant un `previewUrl` valide.
+  /// Récupère une playlist par mot-clé de recherche
+  /// Retourne uniquement les pistes ayant un `previewUrl` valide
   Future<List<TrackModel>> search({
     String query = 'top hits',
     int limit = 25,
@@ -85,7 +74,7 @@ class PlaylistApiService {
   }
 }
 
-/// Exception spécifique aux erreurs de l'API playlist.
+/// Exception spécifique aux erreurs de l'API playlist
 class PlaylistApiException implements Exception {
   final String message;
   PlaylistApiException(this.message);

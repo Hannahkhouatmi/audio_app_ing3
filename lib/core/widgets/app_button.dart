@@ -9,7 +9,6 @@ import '../constants/app_radius.dart';
 
 enum AppButtonVariant { primary, secondary, ghost, danger }
 
-/// Un bouton épuré et stylisé selon le design system.
 class AppButton extends StatefulWidget {
   final String label;
   final VoidCallback? onPressed;

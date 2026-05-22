@@ -1,12 +1,8 @@
-// ════════════════════════════════════════
-// lib/firebase_options.dart
-// ════════════════════════════════════════
-
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
 
-/// Options Firebase par plateforme (générées / alignées sur le projet Firebase).
+/// Options Firebase par plateforme
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
@@ -56,7 +52,7 @@ class DefaultFirebaseOptions {
     iosBundleId: 'com.ing3.usthb.audioAppIng3',
   );
 
-  /// macOS — même projet Firebase que iOS (bundle id identique).
+  /// macOS — même projet Firebase que iOS
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyBqGvjBzYqvJCFNbuApuFc1kevSfxZeC7Y',
     appId: '1:843877100715:ios:209b6e13b23c293d171bee',
@@ -66,7 +62,7 @@ class DefaultFirebaseOptions {
     iosBundleId: 'com.ing3.usthb.audioAppIng3',
   );
 
-  /// Windows — configuration web (à remplacer par une app Windows dédiée si besoin).
+  /// Windows — configuration web
   static const FirebaseOptions windows = FirebaseOptions(
     apiKey: 'AIzaSyDwPmK_K2KqzqEeB8fkujLNd-lXixZxQQU',
     appId: '1:843877100715:web:e78b776210affb8171bee',
@@ -76,7 +72,7 @@ class DefaultFirebaseOptions {
     storageBucket: 'audio-app-ing3.firebasestorage.app',
   );
 
-  /// Linux — configuration web (à remplacer par une app Linux dédiée si besoin).
+  /// Linux — configuration web
   static const FirebaseOptions linux = FirebaseOptions(
     apiKey: 'AIzaSyDwPmK_K2KqzqEeB8fkujLNd-lXixZxQQU',
     appId: '1:843877100715:web:e78b776210affb8171bee',

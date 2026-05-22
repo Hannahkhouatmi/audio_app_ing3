@@ -1,6 +1,3 @@
-// ════════════════════════════════════════
-// lib/providers/playlist_provider.dart
-// ════════════════════════════════════════
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -12,7 +9,7 @@ final playlistApiServiceProvider = Provider<PlaylistApiService>((ref) {
   return PlaylistApiService();
 });
 
-/// Requête de recherche courante (modifiée par l'UI).
+/// Requête de recherche courante
 final playlistQueryProvider = StateProvider<String>((ref) => 'top hits 2024');
 
 /// Playlist récupérée via l'API en fonction de la requête courante.

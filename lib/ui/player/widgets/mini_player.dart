@@ -7,7 +7,6 @@ import '../../../core/constants/app_radius.dart';
 import '../../../providers/audio_player_provider.dart';
 
 /// Petit lecteur persistant affiché au-dessus de la barre de navigation
-/// dès qu'une piste est chargée.
 class MiniPlayer extends ConsumerWidget {
   final VoidCallback? onTap;
 

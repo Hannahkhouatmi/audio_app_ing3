@@ -1,14 +1,7 @@
-// ════════════════════════════════════════
-// lib/services/monthly_goal_service.dart
-// ════════════════════════════════════════
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '../models/monthly_goal_model.dart';
 
-/// Service gérant les objectifs mensuels d'écoute.
-///
-/// Arborescence Firestore :
-///   users/{uid}/goals/{YYYY-MM}
+/// Service gérant les objectifs mensuels d'écoute
 class MonthlyGoalService {
   final FirebaseFirestore _firestore;
 
@@ -26,7 +19,7 @@ class MonthlyGoalService {
         .doc(monthKey);
   }
 
-  /// Récupère l'objectif du mois courant (ou null s'il n'existe pas).
+  /// Récupère l'objectif du mois courant
   Future<MonthlyGoalModel?> getCurrentGoal(String uid) async {
     if (uid.isEmpty) return null;
     final key = MonthlyGoalModel.monthKey(DateTime.now());
@@ -35,7 +28,7 @@ class MonthlyGoalService {
     return MonthlyGoalModel.fromMap(doc.data()!, doc.id);
   }
 
-  /// Écoute en temps réel l'objectif du mois courant.
+  /// Écoute en temps réel l'objectif du mois courant
   Stream<MonthlyGoalModel?> watchCurrentGoal(String uid) {
     if (uid.isEmpty) return Stream.value(null);
     final key = MonthlyGoalModel.monthKey(DateTime.now());
@@ -45,7 +38,7 @@ class MonthlyGoalService {
     });
   }
 
-  /// Définit ou met à jour l'objectif mensuel (targetMinutes >= 0).
+  /// Définit ou met à jour l'objectif mensuel
   Future<void> setGoal({
     required String uid,
     required int targetMinutes,
@@ -66,7 +59,7 @@ class MonthlyGoalService {
     }, SetOptions(merge: true));
   }
 
-  /// Met à jour les minutes accomplies (recalcul depuis le total réel).
+  /// Met à jour les minutes accomplies (recalcul depuis le total réel)
   Future<void> updateAchievedMinutes({
     required String uid,
     required int achievedMinutes,

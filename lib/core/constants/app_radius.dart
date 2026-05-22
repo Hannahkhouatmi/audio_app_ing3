@@ -4,7 +4,6 @@
 
 import 'package:flutter/material.dart';
 
-/// Constantes de rayons de bordure pour le design system.
 class AppRadius {
   static const double small = 8;
   static const double medium = 12;

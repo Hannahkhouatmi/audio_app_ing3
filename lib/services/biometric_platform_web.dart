@@ -1,7 +1,3 @@
-// ════════════════════════════════════════
-// lib/services/biometric_platform_web.dart
-// ════════════════════════════════════════
-
 import 'dart:convert';
 import 'dart:math';
 
